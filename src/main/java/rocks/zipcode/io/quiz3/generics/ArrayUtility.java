@@ -9,7 +9,7 @@ import java.util.function.Function;
 /**
  * @author leon on 09/12/2018.
  */
-public class ArrayUtility<SomeType> {
+public class ArrayUtility<SomeType > {
     private final SomeType[] array;
 
 
@@ -20,14 +20,23 @@ public class ArrayUtility<SomeType> {
     }
 
     public SomeType findOddOccurringValue() {
-
-
-
+//        Integer ans;
+//        boolean boo = true;
+//        for (int i = 0; i < array.length; i++) {
+//            int count = 0;
+//            for (int j = 0; j < array.length; j++) {
+//                if (array[i] == array[j])
+//                    count++;
+//            }
+//            ans = (boo) ? count % 2 != 0;
+//
+//        }
 
         return null;
     }
 
     public SomeType findEvenOccurringValue() {
+
         return null;
     }
 

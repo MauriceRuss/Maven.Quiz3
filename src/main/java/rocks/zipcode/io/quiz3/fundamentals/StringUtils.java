@@ -9,17 +9,13 @@ import java.util.List;
  */
 public class StringUtils {
     public static String capitalizeNthCharacter(String str, Integer indexToCapitalize) {
-        char toCap = (char) str.indexOf(indexToCapitalize);
-
-
-        String answer = String.valueOf(Character.toUpperCase(indexToCapitalize));
-        return answer;
+        char[] c = str.toCharArray();
+        c[indexToCapitalize] = Character.toUpperCase(c[indexToCapitalize]);
+        return new String(c);
     }
 
     public static Boolean isCharacterAtIndex(String baseString, Character characterToCheckFor, Integer indexOfString) {
-        int inOfChar = baseString.indexOf(characterToCheckFor);
-        for(int i = 0; i < baseString.length(); i++){
-            if( i == inOfChar);
+        if(baseString.indexOf(indexOfString) == characterToCheckFor){
             return true;
         }
             return false;
@@ -27,17 +23,14 @@ public class StringUtils {
     }
 
     public static String[] getAllSubStrings(String string) {
-        List<String> allSubString;
-        for (int i = 0; i < string.length(); i++) {
-            for (int j = i + 1; j <= string.length(); j++) {
-                String subs = string.substring(i, j);
-
-                allSubString = Arrays.asList(subs);
-                String[] answer = (String[]) allSubString.toArray();
-                return answer;
+        List<String> allSubString = new ArrayList<String>();
+        int length = string.length();
+        for (int i = 0; i < length; i++) {
+            for(int j =1; j <= length - i; j++){
+                allSubString.add(string.substring(i, i +j));
             }
         }
-        return null;
+        return allSubString.toArray(new String[allSubString.size()]);
     }
 
     public static Integer getNumberOfSubStrings(String input){
