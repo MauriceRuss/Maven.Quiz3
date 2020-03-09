@@ -20,30 +20,42 @@ public class ArrayUtility<SomeType > {
     }
 
     public SomeType findOddOccurringValue() {
-//        Integer ans;
-//        boolean boo = true;
-//        for (int i = 0; i < array.length; i++) {
-//            int count = 0;
-//            for (int j = 0; j < array.length; j++) {
-//                if (array[i] == array[j])
-//                    count++;
-//            }
-//            ans = (boo) ? count % 2 != 0;
-//
-//        }
+        Integer ans;
+        boolean boo = true;
+        for (SomeType someType : array) {
+            int count = 0;
+            for (SomeType type : array) {
+                if (someType == type)
+                    count++;
+            }
+            if (count % 2 != 0) {
+                return someType;
+            }
+        }
 
         return null;
     }
 
     public SomeType findEvenOccurringValue() {
+        for (SomeType someType : array) {
+            int count = 0;
+            for (SomeType type : array) {
+                if (someType == type) {
+                    count++;
+                }
+            }
+            if (count % 2 != 1) {
+                return someType;
+            }
+        }
 
         return null;
     }
 
     public Integer getNumberOfOccurrences(SomeType valueToEvaluate) {
         int numberOfDuplicates=0;
-        for ( int i = 0 ; i < array.length ; i++) {
-            if (array[i].equals(valueToEvaluate)) {
+        for (SomeType someType : array) {
+            if (someType.equals(valueToEvaluate)) {
                 numberOfDuplicates++;
             }
         }
