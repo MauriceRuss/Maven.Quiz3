@@ -23,6 +23,6 @@ public class VowelUtils {
     }
 
     public static Boolean isVowel(Character character) {
-        return null;
+        return character == 'a' || character == 'A' || character == 'e' || character == 'E' || character == 'i' || character == 'I' || character == 'o' || character == 'O' || character == 'u'  || character == 'U';
     }
 }
