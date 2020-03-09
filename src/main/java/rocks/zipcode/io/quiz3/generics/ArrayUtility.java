@@ -1,5 +1,9 @@
 package rocks.zipcode.io.quiz3.generics;
 
+import com.sun.javafx.scene.traversal.Algorithm;
+import com.sun.tools.javac.util.ArrayUtils;
+
+import java.util.HashMap;
 import java.util.function.Function;
 
 /**
@@ -8,11 +12,18 @@ import java.util.function.Function;
 public class ArrayUtility<SomeType> {
     private final SomeType[] array;
 
+
+
+
     public ArrayUtility(SomeType[] array) {
         this.array = array;
     }
 
     public SomeType findOddOccurringValue() {
+
+
+
+
         return null;
     }
 
@@ -21,8 +32,16 @@ public class ArrayUtility<SomeType> {
     }
 
     public Integer getNumberOfOccurrences(SomeType valueToEvaluate) {
-        return null;
+        int numberOfDuplicates=0;
+        for ( int i = 0 ; i < array.length ; i++) {
+            if (array[i].equals(valueToEvaluate)) {
+                numberOfDuplicates++;
+            }
+        }
+        return numberOfDuplicates;
     }
+
+
 
     public SomeType[] filter(Function<SomeType, Boolean> predicate) {
         return null;
